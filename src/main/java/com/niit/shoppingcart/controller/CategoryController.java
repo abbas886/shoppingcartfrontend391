@@ -105,8 +105,9 @@ public class CategoryController {
 	public ModelAndView deleteCategory(@RequestParam String id) {
 		System.out.println("going to delete category : " + id);
 		// navigate to home page
-		ModelAndView mv = new ModelAndView("home");
-		
+		ModelAndView mv = new ModelAndView("redirect:/managecategories");
+		//we supposed to fetch the latest categories
+		//and add to httpSession
 		// based on id, fetch the details from categoryDAO
 		if (categoryDAO.delete(id) == true) {
 			// add success message
