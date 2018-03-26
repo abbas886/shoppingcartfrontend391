@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.shopingcart.dao.CategoryDAO;
 import com.niit.shopingcart.domain.Category;
+
 @Controller
 public class CategoryController {
 
@@ -31,13 +32,14 @@ public class CategoryController {
 
 	@Autowired
 	private Category category;
-	
-	@Autowired HttpSession httpSession;
+
+	@Autowired
+	HttpSession httpSession;
 
 	// http://localhost:8080/shoppingcart/category/get/cate_001
 	// @GetMapping("/category/get/{id}")
-	@RequestMapping(name = "/category/get/{id}", method = RequestMethod.GET)
-	public ModelAndView getCategory(@RequestParam("id") String id) {
+	/*@RequestMapping(name = "/category/get/", method = RequestMethod.GET)
+	public ModelAndView getCategory(@RequestParam String id) {
 		// based on id, fetch the details from categoryDAO
 		category = categoryDAO.get(id);
 
@@ -46,7 +48,7 @@ public class CategoryController {
 		mv.addObject("category", category);
 		return mv;
 
-	}
+	}*/
 
 	@PostMapping("/category/save/")
 	/*
@@ -56,27 +58,17 @@ public class CategoryController {
 	 * 
 	 * @RequestParam("id") String description)
 	 */
-	public ModelAndView saveCategory(@RequestParam("id") String id, 
+	public ModelAndView saveCategory(@RequestParam("id") String id,
 			@RequestParam("name") String name,
 			@RequestParam("description") String description) {
-		
-		ModelAndView mv = new ModelAndView("home");
-		//set the values to category
+
+		ModelAndView mv = new ModelAndView("redirect:/managecategories");
 		category.setId(id);
 		category.setName(name);
 		category.setDescription(description);
-		
-		//save into db
-		if(categoryDAO.save(category))
-		{
+		if (categoryDAO.save(category)) {
 			mv.addObject("categorySuccessMessage", "The category created successfully");
-			//fetch all the categories again 
-	/*		List<Category> categories = categoryDAO.list();
-			//and set to http session.
-			httpSession.setAttribute("categories", categories);
-	*/	}
-		else
-		{
+		} else {
 			mv.addObject("categoryErrorMessage", "Coulc not able to create category.  please contact admin");
 		}
 		return mv;
@@ -106,8 +98,8 @@ public class CategoryController {
 		System.out.println("going to delete category : " + id);
 		// navigate to home page
 		ModelAndView mv = new ModelAndView("redirect:/managecategories");
-		//we supposed to fetch the latest categories
-		//and add to httpSession
+		// we supposed to fetch the latest categories
+		// and add to httpSession
 		// based on id, fetch the details from categoryDAO
 		if (categoryDAO.delete(id) == true) {
 			// add success message
@@ -123,6 +115,17 @@ public class CategoryController {
 
 	}
 
+	@GetMapping("/category/edit")
+	public ModelAndView editCategory(@RequestParam String id) {
+		ModelAndView mv = new ModelAndView("redirect:/managecategories");
+		// based on category id fetch category details.
+		category = categoryDAO.get(id);
+		// mv.addObject("selectedCategory", category);
+		httpSession.setAttribute("selectedCategory", category);
+
+		return mv;
+	}
+
 	@GetMapping("/categories")
 	public ModelAndView getAllCategories() {
 		ModelAndView mv = new ModelAndView("home");
@@ -130,16 +133,16 @@ public class CategoryController {
 		mv.addObject("categories", categories);
 		return mv;
 	}
-	/*@GetMapping("/category/edit")
-	public ModelAndView editCategory(@RequestParam String id)
-	{
-		ModelAndView mv = new ModelAndView("redirect:/managecategories");
-		
-		category = categoryDAO.get(id);
-		
-		httpSession.setAttribute("category", category);
-		return mv;
-		
-	}*/
+	/*
+	 * @GetMapping("/category/edit") public ModelAndView editCategory(@RequestParam
+	 * String id) { ModelAndView mv = new
+	 * ModelAndView("redirect:/managecategories");
+	 * 
+	 * category = categoryDAO.get(id);
+	 * 
+	 * httpSession.setAttribute("category", category); return mv;
+	 * 
+	 * }
+	 */
 
 }

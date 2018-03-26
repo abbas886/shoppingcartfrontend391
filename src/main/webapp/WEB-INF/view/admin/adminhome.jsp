@@ -12,7 +12,7 @@
 <body>
 
 <h2>	<a href="managecategories"> Manage Categories</a>  
-	<a href="managesupplier"> Manage Suppliers</a>
+	<a href="managesuppliers"> Manage Suppliers</a>
 	<a href="manageproducts"> Manage Products</a>
 	</h2>
 
