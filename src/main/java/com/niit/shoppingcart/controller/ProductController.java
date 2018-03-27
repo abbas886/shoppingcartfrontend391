@@ -73,14 +73,16 @@ public class ProductController {
 			
 			) {
 
-		ModelAndView mv = new ModelAndView("redirect:/managecategories");
+		ModelAndView mv = new ModelAndView("redirect:/manageproducts");
 		product.setId(id);
 		product.setName(name);
 		product.setDescription(description);
 		price = price.replace(",","");
 		product.setPrice(Integer.parseInt(price));
-		product.setCategory(categoryDAO.get(categoryID));
-		product.setSupplier(supplierDAO.get(supplierID));
+		//product.setCategory(categoryDAO.get(categoryID));
+		//product.setSupplier(supplierDAO.get(supplierID));
+		product.setCategoryId(categoryID);
+		product.setSupplierId(supplierID);
 		if (productDAO.save(product)) {
 			mv.addObject("productSuccessMessage", "The product created successfully");
 		} else {
@@ -112,7 +114,7 @@ public class ProductController {
 	public ModelAndView deleteProduct(@RequestParam String id) {
 		System.out.println("going to delete product : " + id);
 		// navigate to home page
-		ModelAndView mv = new ModelAndView("redirect:/managecategories");
+		ModelAndView mv = new ModelAndView("redirect:/manageproducts");
 		// we supposed to fetch the latest categories
 		// and add to httpSession
 		// based on id, fetch the details from productDAO
@@ -132,7 +134,7 @@ public class ProductController {
 
 	@GetMapping("/product/edit")
 	public ModelAndView editProduct(@RequestParam String id) {
-		ModelAndView mv = new ModelAndView("redirect:/managecategories");
+		ModelAndView mv = new ModelAndView("redirect:/manageproducts");
 		// based on product id fetch product details.
 		product = productDAO.get(id);
 		// mv.addObject("selectedProduct", product);
@@ -151,7 +153,7 @@ public class ProductController {
 	/*
 	 * @GetMapping("/product/edit") public ModelAndView editProduct(@RequestParam
 	 * String id) { ModelAndView mv = new
-	 * ModelAndView("redirect:/managecategories");
+	 * ModelAndView("redirect:/manageproducts");
 	 * 
 	 * product = productDAO.get(id);
 	 * 

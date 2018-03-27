@@ -41,11 +41,11 @@
 
 
 			<tr>
-				<td>Category</td>
+				<td>Select Category</td>
 				<td><select name="categoryID">
 						<c:forEach var="category" items="${categories}">
 
-							<option id="${category.id}" >${category.name}</option>
+							<option value="${category.id}" >${category.name}</option>
 
 						</c:forEach>
 
@@ -57,14 +57,18 @@
 
 			</tr>
 
-                            <!-- Assignment - fetch the suppliers from db-->
 
-			<tr>
-				<td>Supplier</td>
+<tr>
+				<td>Select Supplier</td>
 				<td><select name="supplierID">
-						<option value="Sup001">SVG Electronics</option>
-						<option value="Sup002">MG Books</option>
-						<option value="Sup003">Sangeetha Mobile</option>
+						<c:forEach var="supplier" items="${suppliers}">
+
+							<option value="${supplier.id}" >${supplier.name}</option>
+
+						</c:forEach>
+
+
+
 
 				</select></td>
 

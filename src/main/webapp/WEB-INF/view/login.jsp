@@ -74,7 +74,8 @@ span.psw {
 
 <form action = "validate" method = "get">
   <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    <img src="resources/images/avatar.PNG" alt="Avatar" class="avatar">
+    <%-- <img src="<%=request.getContextPath()%>/images/user.png"> --%>
   </div>
 
   <div class="container">

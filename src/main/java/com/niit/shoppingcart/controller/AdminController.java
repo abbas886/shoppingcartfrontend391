@@ -74,7 +74,7 @@ public class AdminController {
 		ModelAndView mv = new ModelAndView("home");
 		mv.addObject("isAdminClickedManageProducts", true);
 		//we suppsed to fetch all categories and suppliers
-		//and set it to http seesion.
+		//and set it to http sesion.
 		 List<Category> categories = categoryDAO.list();
 		 List<Supplier> suppliers = supplierDAO.list();
 		 List<Product> products = productDAO.list();
