@@ -51,7 +51,7 @@ public class UserController {
 			//valid credentials.
 			//mv.addObject("welcomeMessage", "Welcome Mr./Ms " + user.getName());
 			httpSession.setAttribute("welcomeMessage", "Welcome Mr./Ms " + user.getName());
-			
+			httpSession.setAttribute("loggedInUserID", user.getEmailID());
 			if(user.getRole()=='A')
 			{
 				httpSession.setAttribute("isAdmin", true);

@@ -11,12 +11,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.shopingcart.dao.CategoryDAO;
 import com.niit.shopingcart.dao.ProductDAO;
 import com.niit.shopingcart.dao.SupplierDAO;
 import com.niit.shopingcart.domain.Product;
+import com.niit.util.FileUtil;
 @Controller
 public class ProductController {
 
@@ -57,19 +59,13 @@ public class ProductController {
 	}*/
 
 	@PostMapping("/product/save/")
-	/*
-	 * public ModelAndView saveProduct(@RequestParam("id") String id,
-	 * 
-	 * @RequestParam("id") String name,
-	 * 
-	 * @RequestParam("id") String description)
-	 */
 	public ModelAndView saveProduct(@RequestParam("id") String id,
 			@RequestParam("name") String name,
 			@RequestParam("description") String description,
 			@RequestParam("price") String price,
 			@RequestParam("categoryID") String categoryID,
-			@RequestParam("supplierID") String supplierID
+			@RequestParam("supplierID") String supplierID,
+			@RequestParam("file") MultipartFile file
 			
 			) {
 
@@ -85,8 +81,17 @@ public class ProductController {
 		product.setSupplierId(supplierID);
 		if (productDAO.save(product)) {
 			mv.addObject("productSuccessMessage", "The product created successfully");
+			// call upload image method
+			if(FileUtil.fileCopyNIO(file, id +".PNG"))
+			{
+				mv.addObject("uploadMessage", "product image successfully updated");
+			}
+			else
+			{
+				mv.addObject("uploadMessage", "Coulod not upload image");
+			}
 		} else {
-			mv.addObject("productErrorMessage", "Coulc not able to create product.  please contact admin");
+			mv.addObject("productErrorMessage", "Could not able to create product.  please contact admin");
 		}
 		return mv;
 

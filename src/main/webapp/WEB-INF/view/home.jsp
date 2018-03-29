@@ -12,11 +12,15 @@
 <body>
 	<center>
 		<h2>Welcome to shopping cart</h2>
+		${logoutMessage}
 	</center>
 
 	<br>
 	<a href="login"> Existing userr</a>
 	<a href="register"> New User</a>
+	
+	<a href="logout"> logout</a>
+	
 	<hr color="blue" size="5">
 	
 	<jsp:include page="product_menu.jsp"></jsp:include>

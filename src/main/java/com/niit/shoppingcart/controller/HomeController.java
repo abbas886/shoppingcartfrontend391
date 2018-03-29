@@ -51,6 +51,20 @@ public class HomeController {
 		return mv;
 
 	}
+	
+	@GetMapping("/logout")
+	public ModelAndView logout()
+	{
+		//at the time of login, we add user id in http session
+		//at the time of logout, we need to remove usre id from http session.
+		ModelAndView mv = new ModelAndView("home");
+		
+		httpSession.invalidate();
+		
+		mv.addObject("logoutMessage", "You are successfully logged out");
+		return mv;
+		
+	}
 
 	@GetMapping("/register")
 	public ModelAndView registration() {

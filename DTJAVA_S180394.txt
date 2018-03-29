@@ -1,0 +1,3615 @@
+
+Week - I
+----------
+
+22/01/18
+----------
+How to learn programming language.
+statements
+	conditional statements
+		if
+		switch(will discuss in eclipse itself)
+	looping statements
+		for
+		while
+		do-while
+		enhanced for
+		iterator
+		
+Operators
+--bitwise operators - Nikhil - will discuss
+--increment/decrement operators - Kolkata - Dipika
+
+
+23/01/18
+----------
+Assignment
+------------
+	download eclipse - IDE (Integrated Development Environment)
+                eclipse - EE -Oxyzen.
+	JDK 8
+
+Java  Editons
+---------------
+Java SE   - Java (Standalone / desktop application)
+Java EE   - Java, Servelent/JSP, HTML, CSS
+Java ME -Mobile
+
+just editors - just to write the program
+editplus
+notepad
+
+ IDE (Integrated Development Environmen)
+write + compile + run + build + deploy + debug + unittest
+
+
+JRE :   Java Runtime Environment   - run the application
+	-testing team/QA,  client
+
+JDK :   Java Development Kit   - develop, document, compile, run, build etc.,
+	developer should use JDK
+
+JVM :  Java Virtual Machine
+
+Translators
+--------------
+English (Human)   ---- Machine language - bits
+
+1) interpreter  - translate line by line  (Speach translation)
+2) compiler  - traslate complete program once - create intermediate file(.obj) (Book Translation)
+
+performance :  compiler
+
+maintanance/error handling : interpreter
+
+
+C -> Turbo C, Borland C, Golden C, Anci C
+we may need to development different compilers for each environement.
+
+Java -> platform independent.  (Write once - run  anywhere)
+
+the application should run in all electronic devices (remote, refrigerators etc.,)
+
+JVM
+
+
+looping statements
+		for
+		while
+		do-while
+		enhanced for
+		iterator
+
+syntax of for loop
+--------------------
+for(initialization; condition; increment/decrement)
+{
+   //statements
+}
+
+print("hello")
+print("hello")
+print("hello")
+
+Ex: display hello 10 times
+
+for( int i = 1; i<=10; i++)
+{
+  print("hello");
+}
+
+Ex: print  1 to 10
+
+for( int i = 1; i<=10; i++)
+{
+  print( i );
+}
+
+Ex: print 10 to 1
+
+int i;
+for(i=10; i>0;i--)
+{
+  print(  i );
+}
+
+Ex: print even numbers between 1 to 10
+int i;
+for(i=2; i<=10; i=i+2)
+{
+  print ( i );
+}
+==========
+int i;
+for(i=2; i<=10; i++)
+{
+  print ( i/2 );
+}
+
+output: 1 1 2 2 3 3 4 4 5
+
+==============
+int i;
+for(i=2; i<=10; i++)
+{
+  print ( i%2 );
+}
+
+output: 0  1 0 1 0 1 0 1 0
+
+
+initilization ; condition; increment/decrement
+What are optional from above? -- all are optional
+
+Ex: How to print 1 to 10 
+
+int i=1;
+for( ; ; )
+{
+ 
+  if(i<=10)
+    {
+       print( i );
+      i++;
+    }
+   else
+   {
+      break;        //will come out from loop
+   }
+
+}
+--------
+
+int i=1;
+for( ; ; )
+{
+ 
+  if(i<=10)
+    {
+       print( i );
+      i++;
+     break; 
+    }
+   else
+   {
+      break;        //will come out from loop
+   }
+
+}
+
+output :  1
+
+---statement
+
+----------
+int i=1;
+for( ; ; )
+{
+ 
+  if(i<=10)
+    {
+       print( i );
+      i++;
+    
+    }
+  
+      break;        //will come out from loop
+   
+
+}
+---------
+output - 1
+
+continue
+----------
+int i=1;
+for( ; ; )
+{
+ 
+   if(i<=10)
+    {
+        print (i)
+        i++; 
+       
+   }
+    break;
+ }
+output :  1..10
+
+
+24/01/18
+------------
+
+while loop
+-------------
+
+syntax:
+
+while(condition)
+{
+  statements
+}
+
+Example :  print 1 to 10;
+
+int i=1;
+while(i<=10)
+{
+   i++;
+   print(i);
+  	
+}
+output: 2 3 4   10 11
+
+increment/decrement operator
+-------------------------------------
+1) pre - increment/decrement
+2) post - increment/decrement
+
+int i=0;
+
+int x;
+
+x =  i++  ( x=i;  i= i+1)
+
+print(x)  -- 0
+print(i)   -- 1
+
+-----
+int i=0;
+int x;
+x =  ++i;    ( i =  i+ 1; x =  i)
+
+print(x)  - 1
+print(i)   - 1
+
+
+int i=1;
+int x;
+x = i--  ( x=i,  i=i-1)
+print(x) : 1 
+print(i) : 0
+------
+int i=1;
+int x;
+x= --i ( i=i-1, x=i)
+print(x) : 0
+print(i) : 0
+
+
+Ex:
+int i=1;
+while(i<=10)
+{
+    print(i);
+  	
+}
+
+output: 1 1 1 1 1 1 1 ........
+
+Ex:
+int i= 0;
+while(i<10)
+{
+    i++;
+    print(i);
+  	
+}
+output :  1  2 3   10  
+
+Ex: same using for loop
+int i= 0;
+for(;i<10;)
+{
+    i++;
+    print(i);
+  	
+}
+
+
+
+
+Ex:  using i--, want to print 1 to 10;
+
+
+int i = 10
+while(i>0)
+{
+    print(11-i)
+    --i
+
+}
+
+i = 10 , 9, 8, 7, 6 , 5, 4, 3, 2, 1, 0
+
+output: 1 2 3 4 5 6 7 8 9 10
+
+
+do-while
+-------------
+syntax:
+
+do
+{
+
+statements
+
+}while(condition);
+
+Ex: 1= 10;
+
+int i=1;
+do
+{
+
+   print(i);
+   i++;
+
+}while(i<=10);
+
+
+Examples
+------------
+
+Example : dispaly even numbers between 1 to 10
+
+for(int i=1; i<=10; i++)
+{
+
+    if(i%2==0)
+   {
+      print(i);
+   }
+
+
+}
+
+if(i%2==0 )  && if(i%2) -- is both are same?
+if it is in c or c++  --- both are same.   0 -> false;  other than 0 -> true
+if java -   syntax error -- the condition part must be boolean
+
+
+function / method : group of statements which can do a particular task.
+
+function -> will take input,  perform some operations and return
+
+return_type  function_name(list_of_inputs)
+{
+
+   statements  // which do some operations
+
+   return ;
+
+}
+
+Example : Write a function to check whether the given number is even or not.
+
+
+boolean isEven(int x)
+{
+    if( x%2==0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+
+}
+
+
+coding standards - naming conventions
+--------------------------------------------------
+variables, constants, methods,  classes, interfaces
+
+variables, constants, methods - should start with lowercase -- camel case
+			(from the next word onwards, the first letter should be uppercase)
+
+
+classes, interfaces  should start with uppercase - camel case
+				(from the next word onwards, the first letter should be uppercase)
+
+Example :  Write a function to find average of 3 subject marks
+//1
+float  getAverage(int sub1, int sub2, int sub3 )
+{
+
+  return    (sub1 + sub2 + sub3)   /  3;
+
+
+}
+//2
+float  getAverage(int sub1, int sub2, int sub3 )
+{
+
+  int total = sub1 + sub2 + sub3;
+  float avg= total / 3;
+  return average;  /// wherever you calling this function, it send the average
+
+
+}
+
+
+main()
+{
+ float a=    getAverage( 50, 60 , 70)
+print(" The average is " + a)
+
+}
+
+output : The average is 60
+
+
+Advantages of function
+------------------------------
+modularity
+code re-usability
+
+
+Ex: sum of two numbers - function
+
+int getSum(int x, int y)
+{
+   return x+y;
+}
+
+main()
+{
+
+print(    getSum( 10 , 20)  );
+print(    getSum( 100 , 200)  );
+
+print(            getSum(     getSum(10,20)  , 30) )
+
+ print(             getSum(                getSum(10,20)  ,  getSum(30,40)    )   )
+ 
+
+}
+
+25/01/18
+--------
+introducing eclipse IDE
+creating workspace
+creating project
+creating package.
+creating class
+
+
+
+27/01/18
+---------
+Yesterday - Recap:
+Eclipse IDE
+workspace
+project
+package
+class
+hello world
+even, odd , primnumber, break
+
+function
+---------
+modularity
+code reusability
+
+when you write any program - consider
+----------------------------------------
+1)modularity
+2)performance
+3)enhancement
+4)memmory
+
+
+(if the voice is not coming , pl inform to tech team - center)
+
+
+Today:
+-------
+OOP
+---
+
+class  
+object
+encapsulation
+
+ineheritance
+polymorphism
+Interfaces and Abstract class
+abstraction
+
+Class : A template / bluprint -
+	consist of properties(member variables) + methods
+
+why class is required?
+-------------------------
+
+int x;  ( x is a variable of type interger)
+int x,y;
+int sno;
+String sName;
+float average;
+
+if you want to 10 different values
+--use array -> group of related elements of same data type
+
+int A[10] ( A is array of type integer, we can store max 10 values
+int subject[6] 
+    subject[0], subject[1].....subject[5]
+
+if you want store different type of data - array are not usful
+
+in c - structures
+
+struct Student
+{
+   int studentNumber;
+   String studentName;
+   float averageMarks;
+}s[10]
+
+--use Structure-> group of related elements of different data type
+--it does have how to operate the data
+
+
+Class  - member variables + operations
+
+Class Student
+{
+  int studentNumber;   //data member
+   String studentName;  //data member
+   float averageMarks;  //data member
+
+
+   float getAverage() ///member function
+    {
+
+     }
+
+
+
+}
+
+
+object : instance of a class
+
+Example:
+Create a class called Student
+declared two member variables sname,sno.
+defined 4 methods
+
+How to test whether this class is working fine or not?
+
+Test using different class.
+create a differnt class classed TestStudent
+
+//Assignment
+1)Similar to Student, you create Employee
+
+
+encapsulation: Binding the data and methods together.
+How can we achieve encapsulation in java?
+-using class
+
+
+
+
+ineheritance:  Getting the properties and methods of other class (Parent class)
+
+Examples
+1)  BaseClass  SubSclass
+2)  ContractEmployee,  PermanentEmployee
+empno, empName, salary - both type of employees
+PermanentEmployee -> PF
+ContractEmployee  -> tenure
+
+
+
+
+
+access specifier
+
+coming monday
+---------------
+generating getter/setter methods
+remaining oops.
+
+Week-I
+--------
+29/01/18
+
+generating getter/setter methods:
+
+In real time, there may 100's class will exist.
+In each class there may 5 to 10 methods (getter/setter) may exist
+
+
+
+polymorphism:  many forms
+
+same method - do different definition/task
+
+1)compile time polymorphism - static - overloading
+2)runtime  polymorphism  - dynamic - overriding
+
+method - add
+1)if I give 2 numbers,  it should add
+2)if I give 3 numbers,  it should add
+
+Realtime example - shopping cart application (Static)
+----------------------------------------------
+search(String category)
+search(String category, int maxPrice)
+search(String category, int minPrice, int maxPrice)
+
+
+2)runtime  polymorphism  - dynamic
+-Parent - child  (Super - Sub)
+If any method is available in super class
+	- can use in sub class directly
+
+Even the method definition is available in my superclass
+	Subclass want to redefine the method.
+
+Realtime example - overriding.
+-------------------------------
+
+Bankinng - differnt types of accounts.
+DepositAccout, SavingAccount, CurrentAccount  -  Child Class
+Account - Parent Class 
+getInterest()
+
+
+
+topics - tomorrow
+------------------
+Interfaces and Abstract class
+abstraction
+constructors
+access specifiers
+
+
+this -> current object
+super -> super class
+
+
+30/01/18
+--------
+Recap:
+
+Today:
+
+Interfaces and Abstract class
+abstraction
+constructors
+access specifiers
+
+
+this -> current object
+super -> super class
+
+Interfaces and Abstract class
+-------------------------------
+
+Class:   All the methods must be defined
+Interface:   No definition (only declaration)
+Abstract Class: partial definition.
+
+
+
+Method
+-------
+declaration :  int sum(int x, int y );
+definition   :  int sum(int x, int y)
+                {
+                    return x+y;
+                 }
+
+Interface ->  no defintion. what is the use?
+There is no use until the method is defined/implmeneted properly.
+But, who will implement?
+The class will implmenet this interface.
+
+Syntax:
+interface InterfaceName
+{
+  //declare the methods
+
+}
+
+Note:   You can't create instance of interface/abstract class
+         Because it is it not impemented.
+So, we have to create instance of the class which implements
+	this inteface
+
+Interface : General Contract. terms & condition.
+  In the interface there may be N number of methods.
+  contract ->  Should implement all the methods in class
+
+Banking: 
+Account  - openAccount(), closeAccount(), getBalance(), withdraw(), deposit()
+SavingAccount, DepositAccount,  CurrentAccount
+
+1)Interface Account
+	-declare openAccount(), 
+         closeAccount(), getBalance(), withdraw(), deposit()
+2)classes SavingAccount, DepositAccount,  CurrentAccount
+	implements Account
+
+
+@Override - > The method is there in interface/ super class
+	     you are overriding the method in current class.
+
+Encapsulation  - hiding the data (class -> data + methods)
+how can we achieve encapsulation -> Class
+Abstraction    - hiding the implementation
+how can we achieve abstraction -> using interfaces and abstract class
+
+Create Abstract Class -> implement interface
+Previously all the classes implemented interface --- modify it
+All the classes should extend Abstract Class
+
+A -> B ->C->D
+
+DepositoAccount -> AbstractAccount ->Account
+
+
+interface
+---------
+marker interface  ->  no methods
+functional interface -> which have only one method
+
+functional programming - Java script 
+lamda expression
+
+Client -> serve(API - Application Interface)
+
+TestPrimeNumber -> PrimeNumber
+
+TestAccount  -> Account interface
+
+
+
+
+
+
+31/01/18
+----------
+What we learn yesterday?:
+
+
+Today:
+------
+access specifiers
+constructors
+
+collection framework - assignment
+
+
+access specifiers
+------------------
+Specify from where you can access the data members and functions
+1)Do you want access only within the class
+2)Do you want access in other classes which are there
+		in same package
+3)Do you want access in other classes which are there
+		in different package
+4)Do you want give access only children/sub classes
+
+
+a)private : only within the class
+b)public  : from any where (from outside of the package)
+c)default  :   from any where (from within the package)
+d)protected : only children
+
+
+
+data hiding
+-----------
+data should be available from out side.
+it should be private
+
+if the data is not available from outside, what the use?
+
+to access the private data, use public setter/getter methods
+
+
+Example:
+Employe class
+id, name ,sale - private
+getter/setters - public
+
+
+constructors
+------------
+create instace
+allocate memory
+intialize variables.
+
+syntax:
+
+access_specifier ClassName( parameterList)
+{
+//statements
+}
+
+By default -> each class have no parameter constructor
+
+To inialize the variables which is best?
+setter method OR constructor?
+
+It is based on requirement.
+all the properties
+1)mandatory properties  -  use constructor
+2)Optional properties   - use setter methods
+
+use setter and constructor both
+-------------------------------
+if the property change in future/frequently
+salary 
+name - 
+
+Tomorrow - with examples - 
+static, final, finally(exceptional handing)
+
+01/02/18
+-------
+final
+
+1) variable   - constant, months = 12, hour
+
+interact with the database.
+url
+driver name
+user id
+password
+
+
+2) method     -  you cant override
+public static Connection getConnection()
+
+3) class      - you can't extend
+
+DBConnection
+
+static - which are sharable among all the objects.
+
+want to know how many db connections are opened.
+
+want to know how many employess are there.
+
+
+
+
+final, finally, finalize - GC Garbage Collector
+ finally - exceptional handing
+
+
+
+
+static variables can be access only in static methods
+
+
+finalize - GC Garbage Collector
+-------------------------------
+developer will crete n number objects. - allocate memory
+
+
+malloc  - allocate the memory
+calloc  - deallocate the meory
+
+Background Thread - Deamon thread  -> search what the objects
+are not used - nullify
+
+LRU Least Resently Used, RR -Round Robin, FIFO, LIFO
+finalize -> it will inform the deamon thread that , I am not using
+	this object, you can nullify.
+
+
+Collection
+------------
+group of objects.
+
+Collection framework - Classes, Interfaces + algorithims
+
+Interface
+---------
+List  - group of objects.
+Set   - set of objects - shoud not be repated
+
+Classes
+----------
+ArrayList, Vector -> implements List interface
+
+Examples
+--------
+1)List of integers - all integers.
+2)List of name- 
+3)List of employess
+
+
+srinivas.patnaik@niit.com
+
+
+02/02/18
+---------
+Yesterday :final, finalize, collections
+ list of integers, list of strings
+
+Today: collection
+list of objects 
+
+1)Create Employee class
+2)getAllEmployees, displayAllEmployees, displayEmployee
+CRUD operations
+Create, Retrieve, Update, Delete
+
+
+
+#define x 10;
+
+int x = 10;
+
+y=10+10;
+
+
+print(10)
+
+sum(10);
+
+z=10*10*y;
+
+
+
+public int sum(int x, int y)
+{
+return x+y;
+}
+
+
+main()
+{
+
+
+sum(10,20);
+}
+
+displayemployee(List<Employee> empList)
+{
+
+}
+main()
+{
+displayemployee(list)
+}
+
+
+Collections
+--------------
+List - ArrayList and Vector
+Map - HashMap; O(1)
+
+
+searching algoriths/techniques
+------------------------------
+1)Linear search
+2)Binary search
+3)Hashing Techniques
+
+
+if the list is sorted - binary search good
+else linear search
+
+Time Complexity -> Big O notation
+
+Linear search
+--------------
+List l = 10 20 30 40 50 60 70 80 90 100
+         10 
+                             
+Best:O(1)
+Worst: O(n)
+Avg:O(n) (1 + 2 + 3 ....n)/n
+n(n+1)/n  - n+1 - n
+
+Binary Search : O(log(n)
+-------------
+List l = 10 20 30 40 50 60 70 80 90 100
+x=100
+l=0;
+h=n-1 (9)
+m=(l+h)/2  ---9/2 -- 4
+
+if(l[m]==x)
+
+---
+
+searching algorith -  O(1)
+
+3)Hashing Techniques - O(1)
+
+
+03/02/18
+--------
+Collections Framework - 
+I supposed to compare different collections - ??- 
+-will discuss after Threads.
+
+Exceptional Handling
+--------------------
+Exception:  an event that can occur during the execution
+of the program.
+
+Let me try to get some exception.
+Ex:
+1)x/y  -AirthmaticException
+2)List l= new ArrayList() --3 elemnts  -  ArrayIndexOutOfBoundsException
+
+  l.get(4)
+3) NullPointerException
+//on null object we can call any methods/variable.
+Employe emp = new Employee();
+Employe emp;    //emp will refer to null;
+emp.getName()
+
+
+
+Exception Stack Trace
+---------------------
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at com.niit.java.exceptions.ExceptionDemo.divide(ExceptionDemo.java:7)
+	at com.niit.java.exceptions.ExceptionDemo.main(ExceptionDemo.java:12)
+
+Will give complete details:
+In which class the error is there.
+In which method the error is there.
+In which line the error is there.
+
+5 keywords related Exception:
+-----------------------------
+1)try   :  It will monitor whether any exceptions are coming or not.
+2)catch :  If any exceptions, it will catch - you can handle
+3)finally:
+---------
+4)throw
+5)throws
+
+finally
+---------
+try
+{
+Emp emp = new Employee();
+List list = new ArrayList();
+Student student = new Student();
+
+
+}catch(Exception e)  // will execute if exception comes.
+{
+emp=null
+list=null;
+student=null;
+
+}finally // will be executed always
+{
+
+
+}
+
+
+try,catch,finally
+
+next day
+---------
+multi catch
+throw and throws
+User Defined Exception
+
+Week-III
+---------
+05/02/18
+--------
+previous day: exceptional halding
+try
+catch
+finally
+
+Today:
+------
+multi catch / nested catch
+throw, throws
+user defined exception
+checked exceptionx and unchecked exception.
+Error and exceptions.
+
+
+command line parameters
+-------------------------
+public int add(int x ,int y)
+{
+return x+y;
+}
+
+public static void main(String s[])
+{
+  add(10,20);
+}
+
+from where we should pass the value for s?
+javac filename.java - compile from command line
+java filename  - run the program
+java filename 10 20 abc - command line parameters.
+s[0] = 10
+s[1]= 20
+s[2] = abc
+
+
+
+
+
+
+multi catch
+-----------
+
+
+
+user defined exception
+-----------------------
+All the excetpions discussed till not - system defined exception
+You may need to create your own exception.
+Why?
+MinimumBalanceException
+How to create Usredefined exception
+-----------------------------------
+public class MyExcetpion extends Excetpion
+{
+
+}
+
+throw -> throw new exception
+throws ->  specify which exception this method may throw.
+public void withdraw(int amount) throws MinimumBalanceException
+
+
+
+
+
+06/02/18
+----------
+Yesterday :
+------------
+throw, throws
+user defined exception
+command line parameters(throw eclipse)
+
+
+Today
+------
+category of exceptions
+Exception class hierarchy
+
+category of exceptions
+-----------------------
+1)Checked Exceptions  :  Compiletime exception
+		The compiler will find whether exception is there
+		are not.
+    You either you have to
+	i)handle using catch  OR
+        ii)specify using throws
+2)Unchecked Exceptions
+               Compile will not identify this exceptions.
+
+UncheckedExceptions
+--------------------
+ArithmaticExcetpion, ArrayIndexOutOfBoundsExceptions
+NullPointerException, NumberFormatExceptions
+
+Cntrl+Shift+R -> window - opoen all the resources
+
+
+
+CheckedExceptions
+------------------
+1)All User defined exceptions';
+SQLException
+FileNotFoundException
+ClassNotFoundException
+
+
+Exception class hierarchy
+-------------------------
+Throwable is root class
+has two children Exception,Error
+
+If any Exception comes => a developer can handle programatically
+Error -> programmatically we can't handle
+
+Error-> OutOfMemoryError, 
+
+
+for(int i=0; i<=10;i--)
+{
+   Employee emp = new Employee();
+   print(i);
+  
+}
+
+NumberFormatException
+---------------------
+String -> group of characters
+character -> a..z,  Z..Z, 0..9 and special symbols
+
+String a = "abcd"
+String b =  "10"
+
+Integer.parseInt(a) // NumberFormatException
+Integer.parseInt(b)
+
+
+
+MultiThreading
+---------------
+
+
+Association
+-----------
+
+Relationship between two objects.
+
+i)Generalization  (kind of / type of)
+ii)Composition    (part of)
+iii)Aggregation   (part of)
+iV)relization    ---interaces/implementation
+
+Examples
+--------
+i)Generalization  (kind of / type of)
+DepositAccount - type of Account
+EnggStudent - type of Student
+Banana - a type of Fruite
+Java - extends
+public class DepositAccount extends Account
+
+i)Composition / Aggregation   (part of)
+Department - part of Organization
+Employee part of Department
+KyeBoard is part of compputer
+
+public Class Department
+{
+
+  // compoisition
+ List<Employee>  employees = new ArrayList();
+
+}
+
+Composition Vs Aggregation
+--------------------------
+Composition  - tightly coupled
+Aggregation - loosely coupled
+
+tightly coupled -> if modify one object -will affect other object
+                   
+
+Priyam - BKC - only once CPU - how is it improving performance ??
+
+
+07/02/18
+---------
+Yesterday :  multithreading concepts
+associations
+
+
+Performance??
+-------------
+Single CPU:
+1)Thread1 -> finding factorial of given number - input through keyboard
+Thread2 -> check whether given number is prime or not.
+- input through keyboard
+
+2)Thread1 - print document
+Thread2  - read file from h/d
+
+Client-server applications(AJAX)
+
+
+Thread Synchronization
+-------------------------
+
+InterBanckingSystem
+--------------------
+
+Account
+-------
+withdraw()
+deposit()
+
+
+Two threads
+-----------
+WithdrawThread
+DepositThread
+
+main class
+
+Executor framework  -  multithread.
+
+08/02/18
+--------
+File i/o - 
+
+09/02/18
+--------
+Byte Oritented --ascii
+Character Oritented. - 2 bytes - 16 bits
+
+ascii -> 7 bits
+max - 127 values
+English
+--------
+a_z - 26
+A_Z - 26
+0_9 - 10
+    -----
+     62
+special symbols +,-,  !@#$%^&*()_~
+max 100
+
+
+Other languages -- chinees >127 
+Byte Oriented - OutPutStream, InputStream ---Abstract Classes
+                BufferredOutPutStream, BufferredInputStream - children
+Character Oriented - Reader, Writer --Abstract Classes
+                     BufferReader, BufferWriter - children
+
+Collections Framework...
+-------------------------
+int x; x is a variable of type integer. - can store one value.
+int x, y ,z;
+
+if you want to work with more values.
+Arrays
+int A[10] -  A is an array where you can store 10 integer values
+A[0] -> first value
+A[9] -> 10th value
+
+operations
+-----------
+1)search for an element
+2)insert an element @ particular positon
+3)delete an element from particular positon
+3)merge two arrays
+4)substract an array from other array..
+5)sort elements.
+......
+
+You need write your own logic/algorithm.
+
+10/02/18
+--------
+String - operations
+String, StringBuffer and String Builder.
+
+Operatiors
+----------
+=    :  Asignment operator
+==   :  relational operator (compare primitive values/variables)
+=== (java script)
+.equals -> to compare objects
+
+primitive : int, char, float, double, long, byte
+
+int x,y;
+x=10;
+y=20;
+
+if(x==y)  ---> equal or not
+
+
+toString is method which is there in Object Class
+we need to override this method.
+String is built class and it is override toString method
+Our Employee class - not overridden...we need to do.
+
+equals is method which is there in Object Class
+String is built class and it is override equals method
+Our Employee class - not overridden...we need to do.
+
+
+
+how to check whether the two objects are same or not
+------------------------------------------------------
+1)fist check whether two objects are instances of same class or not
+	i)instance of
+            if( a is instance of Employee)
+        ii)getClass
+		a.getClass()
+2) check for null
+3)compare the properties
+  in this case - id, name , salary
+
+String, StringBuffer and String Builder.
+------------------------------------------
+Do not create string instances in loop - bad performance.
+
+
+
+next week
+-----------
+1)sample login application - end to end
+2)Start the project(spring, hibernate, maven, junit, html, css, bootstrap)
+
+please learn html - w3schools.
+
+12/02/18
+--------
+Week-4
+------
+1)Login application.
+a)login.html
+	i)user id text field
+	ii)password text field
+        iii)login button
+        iV) reset button
+b)home.html
+	if user id = niit and password = niit
+            navigate to home page.
+         else
+            stay on login page +
+             show error message
+-----------------
+later
+-----
+will use database
+1)create one table user(id,name,password)
+
+applicatoin -> connect to databs ->JDBC
+How can we connect to database
+------------------------------
+1)driver
+2)url  (ip address + port number)
+3)user name
+4)password
+
+Classes
+-------
+DriverManager
+Connection
+Statements
+  i)Statement
+  ii)PrepareStatement
+  iii)CallableStatement
+After writing the query - execute
+ResultSet -> set of rows.
+
+Download
+---------
+1)Tomcat
+2)H2 Database
+we will discuss - why?
+
+
+
+
+Type of applications
+---------------------
+1)Desktop applications /Standalone application
+	eclipse,notepad, ms-office
+2)Client Server Application (2 Tier)
+  Client - UI (User Interface + Business Logic)
+  Server -  Database
+3)3 TierApplication MVC
+  M-Model - Business Logic
+  V- View - client/Browser
+  C -Controller (Servlet)
+4)N Tierarchitecture
+
+
+College Management Application
+Office, Library, Examination, Department
+
+
+webapplication - you need server to install
+1)web server  -tomcat
+2)Enterprise
+
+
+
+configure the tomcat in eclipse
+--------------------------------
+
+
+
+tomorrow:  servlets - basic
+            get/post methods
+
+13/02/18
+--------
+1)login.html , home.html
+2)navigated from login page to home page.
+
+MVC Architecture
+-----------------
+1)V-> browser   -  HTML pages
+2)M->Business logic - DAO (Data Access Object)
+	write a java class - UserDAO
+            write a method
+	   public boolean isValid(String id, String password)
+3)C->Controller 
+  -mediator between view and model
+  -it will take a request from View 
+  - will forward to Model
+  - responde back to view
+--simple Java class - extends HTTPServlet
+  - will take HTTPRequest
+  - return HTTPResponse
+--need to write methods
+implement get/post like methods
+public void get(HttpRequest req, HTTPRespose res)
+{
+
+}
+
+
+doGet                            Vs     doPost
+----------------------
+values wil lbe appended in url
+it is not secured
+will not take bulk information.(256 character)
+
+
+
+login.html -> Controller
+Controller ->UserDAO ---
+UsreControler:
+---------------
+1)extract the id and password which sent by browser/login.html - Done
+2)send it to UserDAO - Done
+3)UserDAO validate method will return true or false. - Done.
+4)based on returned value, navigate to home page/show error
+  dispatch the request.  How can we dispatch the request?
+  RequestDispatcher
+
+
+14/02/18
+---------
+1)Download H2 database - Done
+2)Database Connection - Done
+	driver: org.h2.Driver
+        url: jdbc:h2:~/test
+        name: sa
+        password:
+3)Test DB Connection - Done
+4)create a table  - user (id, name, password) - Done
+5)insert few rows - Done
+6)UserDAO - remove hardcoded values - fetch the data from db
+
+404  - error code
+page not found - error message
+
+
+
+
+create table user
+(
+
+int id;
+name varchar2(30);
+password varchar2(20);
+
+)
+
+
+
+
+
+
+
+
+DataBaseConnection
+-------------------
+1)Create a class  - DBConnection
+2)You should able to create one only connection
+  You should able to create only one instance of Class
+   
+  DBConnection con = new DBConnection(); -> call constructor
+
+   private constructor 
+
+
+ static  getConnection()
+{
+   //return the existing connection
+
+
+
+}
+
+15/02/18
+--------
+0)Download H2 database
+1)creted a table
+2)inserted 3 rows.
+3)DBConnection
+4)Test Connection
+5)UserDAO - removed hard coded values.
+
+Flow
+------
+HTML -> UserController(Servlet)->UserDAO ->Table
+
+Today
+--------
+Test Application
+If any exceptions comes - solve
+1)Some times -> application may throuh exception
+  - by using exceptin stack trace - you solve it.
+2)Some times -> applicaton may not through exception
+  - debugging 
+  - bug -> error
+  - debuggin -> analyzing the error
+
+
+Exceptions
+----------
+1)java.lang.ClassNotFoundException: org.h2.Driver
+Solution:
+add the relavant jar in WEB-INF/lib folder
+  (copy h2 jar file from h2/bin to  - paste WEB-INF/lib)
+
+2)org.h2.jdbc.JdbcSQLException: Table "USER" not found; SQL statement:
+  Solution: 1)In the DB Connection check url value
+  2)In the seved settings combo box / dropdown 
+     select Generic H2 Server
+
+3)org.h2.jdbc.JdbcSQLException: 
+Invalid value "0" for parameter "parameterIndex" [90008-196]
+Soltuion:  The index should start from 1;
+
+4)org.h2.jdbc.JdbcSQLException:
+  Data conversion error converting "abcd"; SQL statement:
+
+
+Steps
+-----
+1)creted dynamic web project    - Done
+2)created login.html + home.html - Done
+3)UserController - C in MVC
+4)UserDAO
+5)DBConnection
+6)Download H2 and configured in DBConnection
+7)Created User table
+8)Inserted 3 rows.
+
+
+26/02/18 
+--------
+1)ShoppingCartBackEnd  - Maven Quick Start
+2)ShoppingCartFrontEnd  -  Maven Web App
+
+Maven - doc -specify sofwares - version -  give to all ther developers
+
+Maven Quick Start  - Java based application
+Maven Web App  -  Dynmic Webapp  Java+html+css+bootstrap etc.,
+
+
+How to create thse projects?
+-----------------------------
+1)IDE - Eclipse
+2)Command line
+mvn archetype:generate -DgroupId=com.niit.shoppingcart -DartifactId=ShoppingCartFrontEnd -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+It will create maven project...but not eclipse project
+need to convert maven project -> eclipse project
+mvn eclipse:eclipse
+import this project into eclipse
+
+
+Maven
+-----
+1)Group ID  -> Application Name -ShoppingCartBackend
+2)Artifict ID  -> Package Name  - com.niit.shoppingcart
+3)Version     -> V1.0  /ShoppingCartV1.0 - shoppingV1.0
+
+
+Download Maven
+
+
+POM.xml - >  Project Object Model
+--------
+All related softwares
+1)group id
+2)artifict id
+3)version
+
+mvnrepository.com
+
+
+
+
+1)Created quick start project
+2)Created web app project
+3)added dependencies core, context
+4)not  tested....tomorrow.
+5)configuration
+
+
+
+Test-Web Application
+--------------------
+1)Create Controller - Java class - HomeController.java
+2)This class -> should convert as controller
+   @Controller - above the class
+3)Mapping   (http://localhost:8080/shoppingcart/)
+
+@RequestMapping("/")
+public String test()
+{
+  return "welcome to home page" 
+}
+
+
+sample web.xml
+====================================
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+    <display-name>Archetype Created Web Application</display-name>
+    <welcome-file-list>
+        <welcome-file>home.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+</web-app>
+============
+Sample dispatcher-servlet.xml
+============
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd">
+ 
+	<context:component-scan base-package="com.niit" />
+ 
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/view/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+ 
+</beans>
+
+
+==============
+
+28/02/18
+---------
+
+ModelAndView -> To which view we have to navigate
+                and
+                what data we have carry
+
+
+
+
+SPA -> Single Page Application
+All the pages should be included in home page only.
+<jsp:include>.........
+
+it should be in if condition
+if()
+{
+<jsp:include page="login.jsp"></jsp:include>
+
+}
+
+jstl, taglibrary
+and import in specificic page.
+
+pom.xml,  home controller, 
+
+
+01/03/18
+----------
+1)sending data from controller to jsp
+ModelAndView mv = new ModelAndView("home");
+mv.addObject("username", "Rupsa")
+in home.jsp
+${username}
+
+2)sending data from jsp to controller
+
+
+Annotation:  Giving instruction to compiler,run time, deploytime
+to generate the code.
+
+
+http://localhost:8080/onlineshoppingcart/web-inf
+
+
+anydesk
+
+Last week:
+----------
+front end-  not completed
+
+This week
+---------
+Back end project.
+1)maven quick start project - Done
+	a)create a simple class - User(bean,domain, actionform,DTO,VO,VLO)
+		i)xml configuration - separate file
+		ii)Java based configuration - not need create any other file.
+        b)create a test class write main method - DONE
+        c)Try to access the User instance - without using new key word - DONE
+2)Create all table( first user table) - Done.
+	i)Create a schema (which contains set of database objects)
+	ii)created user table 
+3)Each and every table - we need a class - bean/entity
+4)DAO Interface / DAOImpl
+5)Writing JUnit Test Cases
+6)Intergrate with front end - login.jsp and registratin.jsp
+
+
+
+
+
+Database
+--------
+Types of commands
+
+1)DDL  : Data Definition Language
+	create, alter, drop
+2)DML  : Data Manipulation Language
+         insert, update, delete 
+3)TCL  : Transaction Controller Language
+	  commit, rollback, savepoint
+
+
+
+
+06/03/18
+---------
+1)Error : Exception in thread "main" java.lang.NoClassDefFoundError: org/springframework/core/ResolvableTypeProvider
+dependency version mismatch.
+
+2)java.lang.ClassNotFoundException: org.springframework.web.servlet.DispatcherServlet
+
+3)Description	Resource	Path	Location	Type
+Cannot change version of project facet Dynamic Web Module to 3.0.	ShoppingCartFrontEnd		line 1	Maven Java EE Configuration Problem
+
+4)Dynamic webmodule  3.0 requies java 1.6 or newer version
+
+5)WARNING: No mapping found for HTTP request with URI [/FrontEndShoping/] in DispatcherServlet with name 'dispatcher'
+
+
+
+
+
+
+07/03/18
+---------
+till now
+1)we created maven quick start
+2)created a table - user
+3)created a class called User
+4)create da test class - tested.
+
+Today
+-----
+1)Hibernate basics
+2)Data source
+
+Created PPT long back and shared in group.
+Those who can't download from group--please use IE
+Silverlight..
+
+Maven dependencies
+-----------------
+
+hibernate core
+spring orm
+h2
+junit - test cases
+
+
+Next steps
+-----------
+created User table - what type of operations I can do?
+CRUD - create, Retrieve, Update, Delete
+1)Crete Interface (in separate package com.niit.shoppingcart.dao)
+	i)Declare the methods - proper method signature      -DONE
+2)Create Implementation Class((in separate package com.niit.shoppingcart.daoimpl) - DONE
+3)  Need to implement all the methods -  tomorrow. - Done.
+4)Write JUnit Test cases  -tomorrow.
+
+
+
+5)Explain JUnitTestcase - in another simple java project.  - Done
+
+6)implement the same in shopping cart project.
+
+
+
+
+Annotations related to JUnitTestCases
+-------------------------------------
+above method names
+
+@Test  -> it is test case method
+@Before -> This method will execute before executing each test case
+@BeforeClass ->This method will execute only once before executing any one
+	    of the test case 
+@After -> This method will execute after executing each test case
+@AFterClass -> This method will execute only once after executing any
+	 	one of the test case.
+
+
+
+While running test cases - getting exceptions
+----------------------------------------------
+1)Connection is broken: "java.net.ConnectException: 
+    Connection refused: connect: localhost
+
+Solution : Check whether H2 databse opened or not..
+
+2)org.springframework.beans.factory.NoSuchBeanDefinitionException: 
+     No bean named 'usreDAO' available
+
+Solution : Check the bean name properly.  and check whether you given @Component
+   OR @Repository above the classes
+
+3)org.hibernate.HibernateException: 
+   Could not obtain transaction-synchronized Session for current thread
+Solution:  add one more annotation above the DAOImpl  @Transactional
+
+
+Today - I written test case only for save
+Tomorrow - will write for all other methods.
+
+09/03/18
+----------
+1)Write testcases for other methods
+2)implement other required methods 
+3)write testcase for these methods also.
+
+12/03/18
+---------
+
+last week:
+DO
+DAO, DAOImpl,
+JUnit
+
+Today 
+-----
+Integration frontned project -> backend project
+-----------------------------------------------
+Front end
+---------
+login.html
+UserController
+isValid() ->Temporarily we hardcoded
+
+BackEnd
+--------
+UserDAO
+UserDAOImpl
+ isvalid()
+
+To Integrate
+------------
+backend project groupid, artficactid and version
+add in front end pom.xml
+
+how do we know these values
+if it is spiring core, context, web -> mvnrepository.com
+
+thse values we can get from backend pom.xml
+
+User Module -login - integration  - don.
+
+Assignment (within two days)
+----------
+1)create table -- DONE
+2)create domain class - DONE
+3)create DAO - interface - DONE
+4)create DAOImpl - class - DONE
+5)Write Junit Test cases
+
+
+6) Intergrate.
+
+Doubts
+1)Criteria - will explain..
+if there are any where conditions, projections, 
+aggregations(sum, min, max, avg, count)
+
+2)set role and date ...
+i)before saving into database
+user.setRole('C')
+user.setRegisterdDate(new Date())  System.getCurrentInMillis -Long
+sessionFactory.getCurrentSession().save(user);
+ii)in the setter methods of domain class.
+
+
+
+
+
+
+error
+-----
+A)No qualifying bean of type 'com.niit.shoppingcart.dao.UserDAO' available: 
+1)@Repository
+2)component scan
+3)proper package.
+
+B)User is not mapped
+@Entity - @Table
+
+
+C)Till yesterday it was working?
+delete target folder from the project.
+mvn clean install -> will execute test cases also
+if any constraints errors - build will fail.
+=> mvn clean install -DskipTests
+
+
+
+
+Error:
+------
+1)WARNING: Exception encountered during context initialization - 
+cancelling refresh attempt: xxx.UnsatisfiedDependencyException: 
+Error creating bean with name 'categoryDAO':
+solutions:
+a)@Repository("categoryDAO") - in CategoryDAOImpl class
+
+2)WARNING: Exception encountered during context initialization - 
+cancelling refresh attempt: xxx..UnsatisfiedDependencyException: 
+Error creating bean with name 'categoryDAO':
+ Unsatisfied dependency expressed through field 'sessionFactory'; 
+nested exception is org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'sessionFactory' 
+defined in com.niit.shopingcart.config.ApplicationContextConfig: 
+Bean instantiation via factory method failed; nested exception is 
+org.springframework.beans.BeanInstantiationException:
+ Failed to instantiate [org.hibernate.SessionFactory]:
+ Factory method 'getSessionFactory' threw exception; 
+nested exception is org.hibernate.MappingException: 
+Could not determine type for: com.niit.shopingcart.domain.Category,
+ at table: Product, for columns: [org.hibernate.mapping.Column(category)]
+
+
+
+
+
+
+
+
+
+14/03/18
+---------
+Yesterday:
+1)created tables - product, category, supplier
+2)Created domain objects for each table
+3)created DAO and DAOImpl for each table
+4)Tested
+
+
+Today:
+-------
+Intergration.
+We already done user integration
+1)we added backend depdency in frontend pom.xml  - DONE
+2)create controllers for category, supplier and product
+3)CRDU operations in each controller
+
+Mappings
+----------
+GetMapping - to get details based on few parameters
+PostMapping - save the data
+PutMapping  - update the data
+DeleteMapping - delete the data
+------------
+RequestMapping
+@RequestMapping("/map", method = "delete") - @DeleteMapping
+
+
+
+Arpit
+and Jaskaran
+Mishel
+
+15/03/18
+--------
+What we learn yeserday ?
+-----------------------
+Controller  -- CategoryController
+CRUD
+-we need to write method
+- with propre input(parameters/arguments) and output(return type)
+
+
+
+Today's Agenda
+-----------------
+Ex1: - return type ModelAndView
+---
+url :   http://localhost:8080/shoppingcart/category/CAT_001
+@GetMapping("/category/{id}")
+public ModelAndView getCategory(@RequeParam("id") String id)
+{
+   ModelAndView mv= new ModelAndView("home");   //1
+   category  = categoryDAO.get(id);
+   mv.addObject("category", category);    //2
+   ----
+   return mv;
+}
+
+Ex2:  - return type - String
+
+public String getCategory(@RequestParam("id") String id, Model model)
+{
+ category  = categoryDAO.get(id);
+  model.addAttribute("category",category );  //2
+  return "home";   //1
+} 
+
+
+
+HomeController
+-------------
+what methods we written in home controller?
+in product_menu.jsp - we hardcoded categories and products.
+hardcoded -> directly we given values
+actually we supposed fetch these values from db.
+How can you get the data from db -
+List<Category>  categories =categoryDAO.list();
+Where to write this logic?
+whenever the user type
+http://localhost:8080/shoppingcart/  --
+@RequestMapping("/") --there we need fetch the categories.
+
+in the HomeController, we already written this request mapping
+where - we navigate to home page,
+but we did not fetch the data from db.
+
+public Class Category
+{
+@Id
+ private String id;
+@Column("name")  // optional
+ private String name;
+ private String description;
+
+ //in one category we have set of products
+
+ Set<Products> products;
+
+
+}
+
+
+@ManyToOne  - N  number products may belongs to one category
+
+@OneToMany  - 1 category may have n number of products
+
+How to fetch products when you fetch category
+1)fetch only categories 
+	- when user click on particular category fetch products
+     
+2)fetch categories + products at a time.
+
+ fetch types
+-------------
+1)early - eager - fetch all at a time.
+2)lazy - do not fetch all, fetch only categories
+          get products when user click on category
+
+
+
+
+
+When you delete category?
+Electronices - mobile, laptop, AC
+nullabe, updatable
+
+DB
+---
+Cascade on delete - 
+  -whenever you delete row parent - will delete all the rows in child
+
+cascade on set null
+
+
+
+Code Review : by 16/03/18 - EOD
+-----------
+Please check-in into git hub
+share the git hub link to Srinivas sir CC to Techn-mentor
+
+will provide code rivew comments - git hub.
+
+add Srinivas sir as collaborator-
+
+
+
+how to checkin the existing project in git hub.
+
+Download git bash - commandline..
+
+
+
+
+16/03/18
+----------
+1)Yesterday -> Annotaionts @ManyToOne and @OneToMany
+2)different ways to write method handlers
+3)removed hardcoded categories and products - fetched
+		from db. - productmenu.jsp
+
+
+Today
+------
+1)will test the application - DONE
+2)Result Transformation
+
+session.getCurrentSession().createCrieteria(Category.class)
+.setResultTransformation
+3)HTTPSession
+
+web application - scope
+------------------------
+1) request scope
+      modelAndView.addObject
+      model.addAttribute
+     The data will be available between only two resources.
+2) session scope
+       the data will abe available among all ther resources
+         -till server is up and running.
+3) application scope
+
+    the data will abe available among all ther resources
+         -even if you restart the server - still it is available.
+
+user details and menu items (cateogory and products)
+  should be available in all the pages.
+
+
+19/03/18
+--------
+
+This week agenda
+-----------------
+
+Admin activities
+category/supplier/product -CRUD
+
+Steps
+------
+1)create a foldre in WEB-INF/View
+     admin - folder name - DONE
+2)In this 'admin' folder creted 4 jsp pages - DONE
+	adminhome.jsp
+        category.jsp
+	supplier.jsp
+	product.jsp
+   a) in adminhome.jsp
+	 i)create 3 hiper links - anchor tags  -DONE
+	 ii)included 3 jsp pages in adminhome.jsp - DONE
+         iii)based some condition we should display
+		the correspnding jsp page           DONE
+   b) include adminhome.jsp in home.jsp - DONE
+          i)if the logged-in user is admin,       -DONE
+               then only adminhome.jsp should be included
+        
+	
+3)Create one more controller  - DONE
+	AdminController
+
+4)check whether the loggedin user is admin or customer.
+  based this , we need to navigate to adminhome/home page
+   i)in the UserController we written validate method  DONE
+
+
+
+
+
+Spring form
+-----------
+commandname
+ModelAttribute    : you can send java domain object
+
+
+@RequestParams - if only few paramters are - you can use
+                id,password
+                id, name description
+                id, name, address
+
+
+
+
+Bootstrap:
+----------
+Responsive Desing  - Viewport
+width height 
++
+existing css class
+
+assignment
+------------
+Spring form -- learn about it.
+ModelAttribute + Command name
+
+sample spring registration spring form - search in google.
+
+20/03/18
+--------
+1)create category   -DONE
+	i)in category.jsp
+	   a)create 3 text fields id, name description
+	   b)create a button 
+           c)in the CategoryController.java createCategory(...)
+           
+2)display existing categories - Pending
+----------------
+3)how to upload the project in github
+    i)download gitbash - command line - prompt
+    Other ways - ii) using eclipse
+    ii)create git hub account
+    iii)login into git hub
+      iv) create repository
+      v) copy the repository link
+          for ex: https://github.com/abbas886/shoppingcartfrontend391.git
+
+
+
+menu items are not displaying -- why?
+
+
+Error:
+-------
+1)http://localhost:8080/category/save/
+project name/ appname is not coming in the url
+Soltuion:
+<form action ="/"  - do not start with slash
+
+
+2)Functional error
+Bug : after creating new category, it is not displaying in menu
+
+Solution: 
+As of now, we are fetching all the categories and porducts
+	at the time opening home page.
+we supposed to fetch the categories and products after creating
+category/product again....
+
+
+21/03/18
+---------
+yesterday:
+1)we created new category
+2)we are able to display the new category in menu items
+3)my project was stopped working - 404 - page not found
+---------------
+abbas886 github
+-----------------
+
+stil admin activities not completed - category
+1)create - done
+2)display/view list of categories -
+	i)we created CategoryController.
+		a)getAllCategories
+		   if you want use this method
+		   explicity admin need t oclick on 
+                   separate hyper link
+            -Don not use method.
+         ii)in the Home controller controller
+                   -we fetched all the categories  -DONE
+         iii)display the list of categories in table format
+		in category.jsp - DONE
+
+3)delete category
+	-add one more hyper link 
+	- for each row.
+4)edit/update category.
+	-add one more hyper link 
+		- for each row.
+
+
+
+abbas886@yahoo.com.
+github link
++ error descirption
+
+error:
+-------
+java.lang.ClassNotFoundException: org.springframework.web.servlet.DispatcherServlet
+
+
+
+22/03/18
+---------
+yesterday
+---------
+1)displayed all the categories in category.jsp
+2)we added two links - delete and edit
+3)we tried to delete selected category - 
+	-got exceptions.
+
+yesterday - I checked front end project -category
+shoppingcartfrotned391
+
+Today
+-----
+1)solve the error - delete the selected category
+2)redirect -  forward
+3)code reusability  -DONE
+
+i)whenever we add new category - fetch all the categories from db.
+ii)whenever we edit existing category    - fetch all the categories from db.
+iii)whenever we delete existing category - fetch all the categories from db.
+
+ fetch all the categories from db.
+-------------------------------------
+ModelAndView mv = new ModelAndView("redirect:/managecategories");
+List<categories> categories =categoryDAO.list();
+httpSession.addObject("categories", categories);
+
+
+
+
+
+
+
+http://localhost:8080/shopingcart/?id='jaskaran@gmail.com'&pwd='jas@123'
+
+http://localhost:8080/shopingcart/?id='baby&kids'
+
+
+
+
+edit
+-----
+1)get the selected category details
+2)try to display these values in text field
+3)start delete.
+
+
+23/03/18
+--------
+Yesterday
+---------
+1)redirect
+2)code reusability
+3)few errors
+3)...category - crete, edit, delete, list - DONE
+
+
+Today
+------
+Supplier --same as category
+Category - id, name, description
+Supplier - id, name, address
+
+26/03/18
+---------
+This week
+---------
+1) product module - image upload/display
+	i)product.jsp  -- DONE
+	ii)ProductController -- DONE
+        iii) will add extra properties - categoryid, supplierid, price, image - DONE
+         iV) we have not added price field in table, domain object -DONE
+         V) add extra fields in product.jsp - DONE
+         vi) Remove hardcoded values in category combobox
+         vii) Remove hardcoded values in supplier combobox
+ 
+2)Logger statements
+3)Display product details when usre select in drop down.
+
+4)Ambiguity mapping error- 
+in CategoryController and SupplierController
+getCategory()              getSupplier() ----commented
+-----
+cart module - buy
+spring security
+spring exceptinal handling
+
+
+27/03/18
+----------
+1)How to display image - HTML   - DONE
+    1)<img src = "d:/user.png" alt ="">
+    2)webapp/resources/img  - create this folder
+    3)we have to specify this path in dispatcherservelet.xml
+<mvc:resources mapping="/resources/**" location="/resources/" />
+           
+    
+2)logger statements :
+   
+   Environment
+   -----------
+   1)Dev Environment - Eclipse, JDK, Source Code, webserver (tomcat)
+   2)QA Environment  - JRE + webserver + war
+   3)Production Evnrionment
+
+SOP - for each method - console - costlier - performance
+logger - SOP
+extra advantages
+---------------
+1)print on a separate file 
+create separate file each day -- appenders
+2)info,warn,error,fatal
+
+How can you implement in our application
+i)in pom.xml - slf4j (Simple Logging Facade for java)  - DONE
+         logbackclassic
+ previously we used log4j -java and appache
+ii)in each method  DAOImpl + Controller class	
+     use loggers.            -DONE
+   
+3)will exute the application - error -solve.
+
+
+abbas886@yahoo.com
+
+27/03/17
+---------
+upload image 
+Why to upload image?
+yesterday , we created one image called avatar.png
+pasted in webapp/resources/images folder
+
+1)Admin can create image and keep at any places Ex:Desktop
+2)prgrammatically we need to copy the image from this place
+		to webapp/resources/images 
+
+
+Google:  spring mvc file upload
+
+
+steps
+------
+1)dependendencies - pom.xml  -  DONE
+2)dispatcher servlet xml
+3)in product.jsp add one field <input type ="file" ..
+    file name should be same as <productid>.PNG     -DONE
+4)Write a separate class like FileUtil.java
+    write a method copyFile(from, to , filename) - DONE
+5)copyFile method we need to call from 
+       ProductController.java - save method
+
+
+
+29/03/18
+---------
+1)File upload - test   -  DONE
+2)different types of copying a file.  DONE
+-----------
+3)add to cart
+	1)create table - cart   - DONE
+	2)create cart domain object  -DONE
+	3)create CartDAO and CartDAOImp  - DONE
+ 	4)Test CartDAO - JUnit 
+	5)create CartController  -DONE 
+	6)create selectedproduct.jsp -    Pending
+           add a button "add to cart"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  
+     
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
