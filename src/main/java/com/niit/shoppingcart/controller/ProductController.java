@@ -9,11 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.niit.shopingcart.dao.CategoryDAO;
 import com.niit.shopingcart.dao.ProductDAO;
@@ -49,12 +51,12 @@ public class ProductController {
 	private static String rootPath = System.getProperty("catalina.home");
 
 
-	@GetMapping("/product/get")
-	public ModelAndView getProduct(@RequestParam String id)
+/*	@GetMapping("/product/get/{id}")
+	public ModelAndView getProduct(@PathVariable("id") String id)
 	{
 		product = productDAO.get(id);
 		
-		ModelAndView mv = new ModelAndView("home");
+		ModelAndView mv = new ModelAndView("redirect:/");
 		mv.addObject("selectedproduct", product);
 		mv.addObject("isUserSelectedProduct", true);
 		
@@ -62,7 +64,19 @@ public class ProductController {
 				rootPath +File.separator +imageDirectory +File.separator +id + ".PNG");
 		
 		return mv;
-	}
+	}*/
+	
+	// Get select product details
+	@GetMapping("/product/get/{id}")
+		public ModelAndView getSelectedProduct(@PathVariable("id") String id, RedirectAttributes redirectAttributes) {
+			
+			ModelAndView mv = new ModelAndView("redirect:/");
+			redirectAttributes.addFlashAttribute("selectedProduct",  productDAO.get(id));
+			redirectAttributes.addFlashAttribute("isUserSelectedProduct",  true);
+			redirectAttributes.addFlashAttribute("selectedProductImage", rootPath +File.separator +imageDirectory +File.separator +id + ".PNG");
+			return mv;
+
+		}
 	
 	
 
