@@ -1,5 +1,6 @@
 package com.niit.shoppingcart.controller;
 
+import java.io.File;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -43,20 +44,27 @@ public class ProductController {
 
 	@Autowired
 	HttpSession httpSession;
+	
+	private static final String imageDirectory = "ShoppingCartImages";
+	private static String rootPath = System.getProperty("catalina.home");
 
-	// http://localhost:8080/shoppingcart/product/get/cate_001
-	// @GetMapping("/product/get/{id}")
-	/*@RequestMapping(name = "/product/get/", method = RequestMethod.GET)
-	public ModelAndView getProduct(@RequestParam String id) {
-		// based on id, fetch the details from productDAO
+
+	@GetMapping("/product/get")
+	public ModelAndView getProduct(@RequestParam String id)
+	{
 		product = productDAO.get(id);
-
-		// navigate to home page
+		
 		ModelAndView mv = new ModelAndView("home");
-		mv.addObject("product", product);
+		mv.addObject("selectedproduct", product);
+		mv.addObject("isUserSelectedProduct", true);
+		
+		mv.addObject("selectedProductImage", 
+				rootPath +File.separator +imageDirectory +File.separator +id + ".PNG");
+		
 		return mv;
-
-	}*/
+	}
+	
+	
 
 	@PostMapping("/product/save/")
 	public ModelAndView saveProduct(@RequestParam("id") String id,

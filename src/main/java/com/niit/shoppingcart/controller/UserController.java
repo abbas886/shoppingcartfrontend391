@@ -1,5 +1,7 @@
 package com.niit.shoppingcart.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.shopingcart.dao.CartDAO;
 import com.niit.shopingcart.dao.UserDAO;
+import com.niit.shopingcart.domain.Cart;
 import com.niit.shopingcart.domain.User;
 
 //Annotation
@@ -25,6 +29,12 @@ public class UserController {
 	private User user;
 	
 	@Autowired
+	private Cart cart;
+	
+	@Autowired
+	private CartDAO cartDAO;
+	
+	@Autowired
 	HttpSession httpSession;
 	
 	
@@ -33,7 +43,7 @@ public class UserController {
 	//it should return username ---- valid credentials
 	//it should return error message ----invalid credentials
 	
-	@GetMapping("validate")
+	@PostMapping("validate")
 	public ModelAndView validate(@RequestParam("uname") String username, @RequestParam("psw") String password)
 	
 	{
@@ -52,6 +62,16 @@ public class UserController {
 			//mv.addObject("welcomeMessage", "Welcome Mr./Ms " + user.getName());
 			httpSession.setAttribute("welcomeMessage", "Welcome Mr./Ms " + user.getName());
 			httpSession.setAttribute("loggedInUserID", user.getEmailID());
+			httpSession.setAttribute("isLoggedIn",true);
+			//fetch how amy products are added to the cart.
+			//this number add to httpSession.
+			List<Cart> carts = cartDAO.list(user.getEmailID());
+			httpSession.setAttribute("size", carts.size());
+			
+			
+			httpSession.setAttribute("carts", carts);
+			
+			
 			if(user.getRole()=='A')
 			{
 				httpSession.setAttribute("isAdmin", true);

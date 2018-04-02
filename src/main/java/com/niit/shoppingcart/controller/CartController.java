@@ -23,9 +23,9 @@ public class CartController {
 	@Autowired  private Cart cart;
 	@Autowired private HttpSession httpSession;
 	
-	@PostMapping("/cart/add")
+	@PostMapping("/product/cart/add")
 	public ModelAndView addToCart(@RequestParam String productName,
-			@RequestParam int price, @RequestParam int quantity)
+			@RequestParam int price, @RequestParam String quantity)
 	
 	{
 		ModelAndView mv = new ModelAndView("home");
@@ -38,7 +38,7 @@ public class CartController {
 		
 		cart.setEmailID(loggedInUserID);
 		cart.setPrice(price);
-		cart.setQuantity(quantity);
+		cart.setQuantity(Integer.parseInt(quantity));
 		
 		if(cartDAO.save(cart))
 		{
@@ -72,7 +72,13 @@ public class CartController {
 	}
 	
 	
-	
+	@GetMapping("/mycart")
+	public ModelAndView myCart()
+	{
+		ModelAndView mv = new ModelAndView("home");
+		mv.addObject("isUserClickedMyCart", true);
+		return mv;
+	}
 	
 	
 	
