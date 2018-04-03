@@ -66,6 +66,10 @@ public class ProductController {
 		return mv;
 	}*/
 	
+	//first selected product and second selected product
+	//are appending in the URL - and hence getting 404
+	//http://localhost:8080/shoppingcart/product/get/prd001  - 1st
+	//http://localhost:8080/shoppingcart/product/get/prd001/product/get/prd003  - 1st
 	// Get select product details
 	@GetMapping("/product/get/{id}")
 		public ModelAndView getSelectedProduct(@PathVariable("id") String id, RedirectAttributes redirectAttributes) {

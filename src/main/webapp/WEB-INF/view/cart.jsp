@@ -9,10 +9,14 @@
 </head>
 <body>
 
-<c:forEach var="cart" items="carts">
+<c:forEach var="cart" items="${cartList}">
 
 
-<input type="text" name="price" value="${cart.price}"> <br>
+Name  : <input type="text" name="price" value="${cart.productName}"> <br>
+
+price : <input type="text" name="price" value="${cart.price}"> <br>
+
+quantity  : <input type="text" name="price" value="${cart.quantity}"> <br>
 
 
 

@@ -59,7 +59,13 @@ public class HomeController {
 		//at the time of logout, we need to remove usre id from http session.
 		ModelAndView mv = new ModelAndView("home");
 		
+		//we were not able to see menu items after logout
+		//will modify this code.
 		httpSession.invalidate();
+		
+		/*httpSession.removeAttribute("loggedInUserID");
+		httpSession.removeAttribute("isLoggedIn");
+		httpSession.removeAttribute("isAdmin");*/
 		
 		mv.addObject("logoutMessage", "You are successfully logged out");
 		return mv;

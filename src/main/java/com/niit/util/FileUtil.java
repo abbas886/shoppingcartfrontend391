@@ -12,7 +12,7 @@ public class FileUtil {
 
 	private static final String imageDirectory = "ShoppingCartImages";
 	private static String rootPath = System.getProperty("catalina.home");
-
+   // private static String rootPath = "resources//images//";
 	public static boolean fileCopyNIO(MultipartFile file, String fileName) {
 
 		File dest = new File(rootPath + File.separator + imageDirectory + File.separator + fileName);
