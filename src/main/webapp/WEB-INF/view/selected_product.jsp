@@ -9,8 +9,9 @@
 <body>
 
 <form action="cart/add" method = "post">
-<img alt="" src="${selectedProductImage}"> <br>
-<%-- <img alt="" src="resources/images/ShoppingCartImages/${selectedproduct.id}.PNG"> --%>
+<%-- <img alt="" src="${selectedProductImage}"> <br> --%>
+${selectedProduct.id}
+<img alt="" src="resources/images/${selectedProduct.id}.PNG">
 product name: <input type="text" disabled="disabled" name="productName" value ="${selectedProduct.name}"> <br>
 price <input type="text" disabled="disabled" name="price" value="${selectedProduct.price}"> <br>
 Quantity : <input type="text" name="quantity" > <br>

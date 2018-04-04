@@ -2,19 +2,19 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.niit</groupId>
-	<artifactId>ShoppingCartFrontEnd</artifactId>
+	<artifactId>ShoppingCart</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ShoppingCartFrontEnd Maven Webapp</name>
+	<name>ShoppingCart Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 
-	<dependency>
-		<groupId>com.niit</groupId>
-	<artifactId>ShopingCartBackEnd</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	</dependency>
-	
+		<dependency>
+			<groupId>com.niit</groupId>
+			<artifactId>ShopingCartBackEnd</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -42,11 +42,60 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.25</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3.3</version>
+
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>5.0.3.RELEASE</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>5.0.3.RELEASE</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>5.0.3.RELEASE</version>
+		</dependency>
+
 
 
 
 	</dependencies>
 	<build>
-		<finalName>ShoppingCartFrontEnd</finalName>
+		<finalName>ShoppingCart</finalName>
 	</build>
 </project>

@@ -28,6 +28,7 @@ public class CartController {
 	@Autowired  private Cart cart;
 	@Autowired private HttpSession httpSession;
 	
+	
 	@PostMapping("/product/cart/add")
 	public ModelAndView addToCart(@RequestParam String productName,
 			@RequestParam int price, @RequestParam String quantity)

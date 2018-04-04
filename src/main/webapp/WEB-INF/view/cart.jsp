@@ -11,6 +11,7 @@
 
 <c:forEach var="cart" items="${cartList}">
 
+<img alt="" src=" ${ImagesFolder}${cart.productID}.PNG">
 
 Name  : <input type="text" name="price" value="${cart.productName}"> <br>
 

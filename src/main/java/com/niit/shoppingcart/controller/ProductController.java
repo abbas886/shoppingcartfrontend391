@@ -47,8 +47,12 @@ public class ProductController {
 	@Autowired
 	HttpSession httpSession;
 	
-	private static final String imageDirectory = "ShoppingCartImages";
-	private static String rootPath = System.getProperty("catalina.home");
+	@Autowired
+	FileUtil fileUtil;
+	
+	//private static final String imageDirectory = "ShoppingCartImages";
+	//private static String rootPath = System.getProperty("catalina.home");
+
 
 
 /*	@GetMapping("/product/get/{id}")
@@ -77,7 +81,7 @@ public class ProductController {
 			ModelAndView mv = new ModelAndView("redirect:/");
 			redirectAttributes.addFlashAttribute("selectedProduct",  productDAO.get(id));
 			redirectAttributes.addFlashAttribute("isUserSelectedProduct",  true);
-			redirectAttributes.addFlashAttribute("selectedProductImage", rootPath +File.separator +imageDirectory +File.separator +id + ".PNG");
+		//	redirectAttributes.addFlashAttribute("productID", rootPath +File.separator +imageDirectory +File.separator +id + ".PNG");
 			return mv;
 
 		}
@@ -108,7 +112,7 @@ public class ProductController {
 		if (productDAO.save(product)) {
 			mv.addObject("productSuccessMessage", "The product created successfully");
 			// call upload image method
-			if(FileUtil.fileCopyNIO(file, id +".PNG"))
+			if(fileUtil.fileCopyNIO(file, id +".PNG"))
 			{
 				mv.addObject("uploadMessage", "product image successfully updated");
 			}
