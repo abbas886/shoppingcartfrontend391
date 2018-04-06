@@ -23,6 +23,17 @@
        </c:if>
     </ul>
     
+     <form action="search">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search" name="searchString">
+      <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+      </div>
+    </div>
+  </form>
+  
+  
+    
      <ul class="nav navbar-nav navbar-right">
       <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <c:if test="${isLoggedIn==true}">

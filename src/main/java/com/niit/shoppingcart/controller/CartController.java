@@ -10,12 +10,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.shopingcart.dao.CartDAO;
+import com.niit.shopingcart.dao.ProductDAO;
 import com.niit.shopingcart.domain.Cart;
+import com.niit.shopingcart.domain.Product;
 
 @Controller
 public class CartController {
@@ -25,11 +28,37 @@ public class CartController {
 	@Autowired
 	private CartDAO cartDAO;
 	
+	@Autowired
+	private ProductDAO productDAO;
+	
 	@Autowired  private Cart cart;
+	@Autowired  private Product product;
 	@Autowired private HttpSession httpSession;
 	
+	@GetMapping("/buy")
+	public ModelAndView order()
+	{
+		
+		ModelAndView mv = new ModelAndView("home");
+		
+		//there should be on update method which take 
+		//email id as paramter.
+		String loggedInUserID =(String) httpSession.getAttribute("loggedInUserID");
+		if (cartDAO.update(loggedInUserID))
+		{
+			mv.addObject("successMessage", "Your order placed successfully...");
+		}
+		else
+		{
+			mv.addObject("errorMessage", "Your order could placed.   please try after some time.");
+		}
+		
+		return mv;
+		
+	}
 	
-	@PostMapping("/product/cart/add")
+	
+	/*@PostMapping("/product/cart/add")
 	public ModelAndView addToCart(@RequestParam String productName,
 			@RequestParam int price, @RequestParam String quantity)
 	
@@ -46,6 +75,40 @@ public class CartController {
 		cart.setPrice(price);
 		cart.setQuantity(Integer.parseInt(quantity));
 		
+		if(cartDAO.save(cart))
+		{
+			mv.addObject("successMessage", "The product add to cart successfully");
+		}
+		else
+		{
+			mv.addObject("errorMessage", "Could not add the product to cart..please try after some time");
+		}
+		return mv;
+		
+	}*/
+	
+	@GetMapping("/cart/add/{productID}")
+	public ModelAndView addToCart(
+			@PathVariable String productID	)
+	
+	{
+		//ModelAndView mv = new ModelAndView("home");
+		ModelAndView mv = new ModelAndView("redirect:/");
+		String loggedInUserID = (String) httpSession.getAttribute("loggedInUserID");
+		if(loggedInUserID==null)
+		{
+			mv.addObject("errorMessage", "Please login to add any product to cart");
+			return mv;
+		}
+		//get the other details of product from productDAO.get()
+		product = productDAO.get(productID);
+		
+		cart.setEmailID(loggedInUserID);
+		cart.setPrice(product.getPrice());
+		cart.setProductID(productID);
+		cart.setProductName(product.getName());
+		cart.setQuantity(1);
+		cart.setId();  //to set a random number.
 		if(cartDAO.save(cart))
 		{
 			mv.addObject("successMessage", "The product add to cart successfully");

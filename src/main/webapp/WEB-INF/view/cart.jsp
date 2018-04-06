@@ -9,9 +9,13 @@
 </head>
 <body>
 
+<a href="buy"> BUY</a>  <br>
+
 <c:forEach var="cart" items="${cartList}">
 
-<img alt="" src=" ${ImagesFolder}${cart.productID}.PNG">
+<%-- <img alt="" src=" ${ImagesFolder}${cart.productID}.PNG"> --%>
+
+<img alt="" src="resources/images/${cart.productID}.PNG">
 
 Name  : <input type="text" name="price" value="${cart.productName}"> <br>
 

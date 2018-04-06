@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -49,6 +51,8 @@ public class ProductController {
 	
 	@Autowired
 	FileUtil fileUtil;
+	
+	Logger log = LoggerFactory.getLogger(ProductController.class);
 	
 	//private static final String imageDirectory = "ShoppingCartImages";
 	//private static String rootPath = System.getProperty("catalina.home");
@@ -185,18 +189,23 @@ public class ProductController {
 		mv.addObject("products", categories);
 		return mv;
 	}
-	/*
-	 * @GetMapping("/product/edit") public ModelAndView editProduct(@RequestParam
-	 * String id) { ModelAndView mv = new
-	 * ModelAndView("redirect:/manageproducts");
-	 * 
-	 * product = productDAO.get(id);
-	 * 
-	 * httpSession.setAttribute("product", product); return mv;
-	 * 
-	 * }
-	 */
+	@GetMapping("search")
+	public ModelAndView searchProduct(@RequestParam("searchString") String searchString)
+	{
+		ModelAndView mv = new ModelAndView("home");
+		List<Product> products =  productDAO.search(searchString);
+		mv.addObject("products", products);
+		mv.addObject("isUserSelectedProduct", true);
+		log.info("Number of products with search string " +searchString +  " is/are : " + products.size());
+		return mv;
+		
+	}
+	
+	
 
 
+	
+	
+	
 
 }
