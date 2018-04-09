@@ -50,7 +50,7 @@
 
 
 	<c:if test="${isUserClickedLogin==true}">
-		<jsp:include page="login.jsp"></jsp:include>
+		<jsp:include page="sec_login.jsp"></jsp:include>
 	</c:if>
 	<c:if test="${isUserClickedRegister==true}">
 		<jsp:include page="registration.jsp"></jsp:include>

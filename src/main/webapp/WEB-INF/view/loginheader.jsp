@@ -17,7 +17,7 @@
   <div class="container-fluid">
  
     <ul class="nav navbar-nav navbar-left">
-      <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="loginHear"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       <c:if test="${isLoggedIn==true}">
        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
        </c:if>

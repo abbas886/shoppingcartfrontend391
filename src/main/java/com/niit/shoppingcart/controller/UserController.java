@@ -44,7 +44,7 @@ public class UserController {
 	//it should return error message ----invalid credentials
 	
 	@PostMapping("validate")
-	public ModelAndView validate(@RequestParam("uname") String username, @RequestParam("psw") String password)
+	public ModelAndView validate(@RequestParam("uname") String username, @RequestParam("password") String password)
 	
 	{
 		ModelAndView mv = new ModelAndView("home");

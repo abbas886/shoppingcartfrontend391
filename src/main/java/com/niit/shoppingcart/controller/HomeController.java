@@ -58,7 +58,7 @@ public class HomeController {
 
 	}
 
-	@GetMapping("/login")
+	@GetMapping("/loginHear")
 	public ModelAndView login() {
 
 		ModelAndView mv = new ModelAndView("home");

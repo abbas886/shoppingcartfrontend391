@@ -13,22 +13,24 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 
 		<security:intercept-url pattern="/manage**"
 			access="hasRole('A')" />
-		<security:intercept-url pattern="/myCart/**"
+		<security:intercept-url pattern="/mycart/**"
 			access="hasRole('C')" />
-	
-		<security:form-login username-parameter="username"
-			password-parameter="password" authentication-failure-forward-url="/loginError" />
+
+		<security:form-login    login-page="/loginHear"
+			username-parameter="username" password-parameter="password"
+			authentication-failure-forward-url="/loginError"
+			authentication-success-forward-url="/checkRole" />
 
 		<security:access-denied-handler
 			error-page="/accessDenied" />
-		<security:csrf />
+		<!-- <security:csrf /> -->
 
 		<security:logout logout-url="/logout" />
 
 
 
 
-		<!-- <security:form-login login-page="/login" /> -->
+		<!-- <security:form-login login-page="/loginHear" /> -->
 		<!-- authentication-success-forward-url="/login" -->
 
 

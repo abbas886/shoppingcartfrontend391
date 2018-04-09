@@ -19,7 +19,7 @@
 		<div class="input-group margin-bottom-sm">
 			<span class="input-group-addon"><i
 				class="fa fa-envelope-o fa-fw"></i></span> <input class="form-control"
-				type="text" name="username" placeholder="User ID">
+				type="text" name="uname" placeholder="User ID">
 		</div>
 		<div class="input-group">
 			<span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
